@@ -8,17 +8,19 @@ package uk.rajiv.algorithms.KMP_SearchIntegerPatterns;
  * @Date 11/10/2015
  * A Knuth Morris Pratt Algorithm implementation to 
  * search for occurrences of a pattern (string or integer) within a 
- * target integer sequence or string.
+ * target integer-sequence or string.
  *
  */
 public class KMPSearch implements IPatternSearch {
 	
-	private String s_pattern;
-	private int[] i_pattern;
-	private int[] m_table;
+	private String s_pattern;	// string pattern to look for
+	private int[] i_pattern;	//	int pattern to look for
+	private int[] m_table; 		// for pre-computed failure table
 	
 	/**
-	 * @param pattern
+	 * Create a failure table from string pattern
+	 * @param pattern a string pattern
+	 * @return an array of integers representing the failure table
 	 */
 	private int[] createTable(String pattern) {
 		
@@ -56,7 +58,9 @@ public class KMPSearch implements IPatternSearch {
 	
 	
 	/**
-	 * @param pattern
+	 * Create a failure table from an integer pattern
+	 * @param pattern an array of integers as the pattern to look for
+	 * @return an array of integers representing the failure table
 	 */
 	private int[] createTable(int[] pattern) {
 		

@@ -21,10 +21,10 @@ public interface IPatternSearch {
 	
 	
 	/**
-	 * Search for the occurrences of a integer pattern in a longer 
-	 * @param target string to search pattern in
-	 * @param pattern a string pattern
-	 * @return index of first occurrence of pattern in text; -1 if pattern is not found
+	 * Search for the occurrences of a integer pattern in a longer sequence
+	 * @param target array sequence of integers to search pattern in
+	 * @param pattern an array of integers to be searched for
+	 * @return index of first occurrence of pattern in the sequence; -1 if pattern is not found
 	 */
 	public int searchPattern(int[] target, int[] pattern);
 	
