@@ -57,7 +57,7 @@ public class AppTest
     
     
     /**
-     * Testing for normal case with repeating occurrences
+     * Testing for best case 
      */
     public void testForBestCase()
     {
@@ -70,7 +70,7 @@ public class AppTest
     }
     
     /**
-     * Testing for normal case with repeating occurrences
+     * Testing for worst case
      */
     public void testForWorstCase()
     {
@@ -84,7 +84,7 @@ public class AppTest
     
     
     /**
-     * Testing for normal case with repeating occurrences
+     * Testing for single-element cases
      */
     public void testForPatternLength()
     {
@@ -97,7 +97,7 @@ public class AppTest
     }
     
     /**
-     * Testing for normal case with repeating occurrences
+     * Testing for error conditions
      */
     public void testForEmptyPattern()
     {
@@ -111,7 +111,7 @@ public class AppTest
     
     
     /**
-     * Testing for normal case with repeating occurrences
+     * Testing for empty target
      */
     public void testForEmptyTarget()
     {
@@ -125,7 +125,7 @@ public class AppTest
     
     
     /**
-     * Testing for normal case with repeating occurrences
+     * Testing for pattern longer than sequence case
      */
     public void testForPatternLongerThanTarget()
     {
@@ -133,6 +133,20 @@ public class AppTest
     	
     	int [] target = {2,3,4};
     	int [] pattern = {2,3,4,5,7,8,9,2,3,4,5,7,8,9};
+    	
+    	assertTrue( kmp.searchPattern(target, pattern) == -1 );
+    }
+    
+    
+    /**
+     * Testing for non-match cases
+     */
+    public void testForNonMatchCases()
+    {
+    	KMPSearch kmp = new KMPSearch();
+    	
+    	int [] target = {2,3,4,5,7,8,9,2,3,4,5,7,8,9};
+    	int [] pattern = {1,3,5,9};
     	
     	assertTrue( kmp.searchPattern(target, pattern) == -1 );
     }
